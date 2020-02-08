@@ -11,7 +11,7 @@ stopwords = nltk.corpus.stopwords.words('english')
 train_data = pd.read_csv('train.csv')
 test_data = pd.read_csv('test.csv')
 
-x_train_data, y_train_data = train_data.loc[:, [1, 2, 5]], train_data.loc[:, 11:]
+x_train_data, y_train_data = train_data.iloc[:, [1, 2, 5]], train_data.iloc[:, 11:]
 text_cols = x_train_data.columns
 
 def clean_texts(text):
