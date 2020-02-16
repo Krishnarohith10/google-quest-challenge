@@ -72,7 +72,7 @@ model.summary()
 
 history = model.fit(x_train, y_train, batch_size=batch_size, 
                     epochs=epochs, validation_split=0.25, shuffle=True)
-'''
+
 range_epochs = range(1, epochs+1)
 
 plt.plot(range_epochs, history.history['accuracy'], 'r')
@@ -115,4 +115,3 @@ for key, col in enumerate(submission.columns):
         submission[col] = prediction[:, key-1]
 
 submission.to_csv('submission.csv', index=False)
-'''
