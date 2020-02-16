@@ -58,7 +58,7 @@ def model():
     concat = Concatenate(axis=1)(embs)
     lstm_1 = Bidirectional(LSTM(128, activation='relu', dropout=0.2, recurrent_dropout=0.2))(concat)
     dense_1 = Dense(64, activation='relu')(lstm_1)
-    dropout_1 = Dropout(0.5)(dense_1)
+    dropout_1 = Dropout(0.2)(dense_1)
     output = Dense(30, activation='sigmoid')(dropout_1)
     model = Model(inputs=inputs, outputs=[output])
 
